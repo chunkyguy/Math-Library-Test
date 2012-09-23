@@ -35,11 +35,25 @@
 	self.button.hidden = YES;
 	self.outputText.text = @"Running...";
 	TestResults tr = testLibraries(10);
-	self.outputText.text = [NSString stringWithFormat:@"Eigen\n=====\nAdditions: %ld\nMultiplications: %ld\n\nGLM\n===\nAdditions: %ld\nMultiplications: %ld\n\nCML\n===\nAdditions: %ld\nMultiplications: %ld",
+
+	const NSString *verEigen = @"eigen-8311f0d8ecd0-2012_09_22-11_11_26";
+	const NSString *verGLM = @"glm-c588e9fa1-2012)09_05-15_03_27";
+	const NSString *verCML = @"cml-1_0_3";
+	
+	NSString *versions = [NSString stringWithFormat:
+						  @"Eigen version: %@\n\nGLM version: %@\n\nCML Version: %@",
+						  verEigen, verGLM, verCML];
+	
+	NSString *results = [NSString stringWithFormat:
+							@"Eigen\n=====\nAdditions: %ld\nMultiplications: %ld\n\n"
+						    @"GLM\n===\nAdditions: %ld\nMultiplications: %ld\n\n"
+						    @"CML\n===\nAdditions: %ld\nMultiplications: %ld",
 							tr.eigen.additions, tr.eigen.multiplications,
 							tr.glm.additions, tr.glm.multiplications,
-							tr.cml.additions, tr.cml.multiplications
-							];
+							tr.cml.additions, tr.cml.multiplications];
+
+	self.outputText.text = [NSString stringWithFormat:@"%@\n\n%@", versions, results];
+
 }
 
 @end
