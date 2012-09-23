@@ -6,17 +6,29 @@
 //#ifndef ANDROID
 #include <glm/glm.hpp>
 //#endif
+
+struct TestResult {
+	long additions;
+	long multiplications;
+};
+
+struct TestResults {
+	TestResult eigen;
+	TestResult glm;
+	TestResult cml;
+};
+
 /**
  * Wrapper function that performs all the testing. This is not part of Main.cpp
  * because the function can be used on Android here, which doesn't use a
  * main() function.
  */
-void testLibraries(int count);
+TestResults testLibraries(int count);
 
 /**
  * Print the time difference between two timevals in milliseconds.
  */
-void difference(timeval& start, timeval& end);
+long difference(timeval& start, timeval& end);
 
 /**
  * Create a float array with a size specified by count. Each value is
