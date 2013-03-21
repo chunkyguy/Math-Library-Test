@@ -1,11 +1,10 @@
 #ifndef _DRIVER_H_
 #define _DRIVER_H_
 
-#include <cml/cml.h>
-#include <Eigen/Dense>
+#include "cml/cml.h"
+#include "Eigen/Dense"
 //#ifndef ANDROID
-#include <glm/glm.hpp>
-#include <GLKit/GLKMath.h>
+#include "glm/glm.hpp"
 //#endif
 
 struct TestResult {
@@ -17,7 +16,6 @@ struct TestResults {
 	TestResult eigen;
 	TestResult glm;
 	TestResult cml;
-    TestResult glkMath;
 };
 
 /**
@@ -86,16 +84,5 @@ void test_cml_mat4_multiplication(cml::matrix44f_c* inputA,
                                   cml::matrix44f_c* output, int count);
 
 
-
-///////////////////////////////////////////////////////////////////////////////
-// GLKMath library.
-///////////////////////////////////////////////////////////////////////////////
-GLKMatrix4* generateGLKMathMat4s(int count);
-
-void test_glkmath_mat4_addition(GLKMatrix4* inputA, GLKMatrix4* inputB,
-                            GLKMatrix4* output, int count);
-
-void test_glkmath_mat4_multiplication(GLKMatrix4* inputA, GLKMatrix4* inputB,
-                                  GLKMatrix4* output, int count);
 
 #endif // _DRIVER_H_
