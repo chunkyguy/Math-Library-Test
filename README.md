@@ -134,3 +134,36 @@ both ABIs.
 Despite GLM being faster on the mobile devices, I am more inclined to use Eigen
 due to its speed on the tested Intel CPU and its much better documentation and
 more active community.
+
+Sid's Comments
+==============
+
+Here are my results after adding GLKMath to the list:
+
+```
+Eigen:
+Additions: 77624 milliseconds.
+Multiplications: 227179 milliseconds.
+
+GLM:
+Additions: 23935 milliseconds.
+Multiplications: 80599 milliseconds.
+
+CML:
+Additions: 102390 milliseconds.
+Multiplications: 161059 milliseconds.
+
+GLKMath:
+Additions: 8526 milliseconds.
+Multiplications: 21775 milliseconds.
+```
+
+I think I'll be going with GLKMath, as my primary target is iDevices, and the GLKMath library 
+has NEON instrunctions to work more effectively on the real devices.
+
+Another reason is that GLKMath is actually C based, so improved performance. 
+
+Only downsides are that, there are no in-built overloaded operators, 
+but that's just a minor excuse for not using GLKMath. 
+And, the GLKMath library is pretty basic compared to others, 
+but I think I can live with that, I'm a man with simple needs after all. :D
