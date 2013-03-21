@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65B2FCB516FAD50900A49A3D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B2FCB416FAD50900A49A3D /* GLKit.framework */; };
 		BBADB304160F73C7007D0A7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBADB303160F73C7007D0A7A /* UIKit.framework */; };
 		BBADB306160F73C7007D0A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBADB305160F73C7007D0A7A /* Foundation.framework */; };
 		BBADB308160F73C7007D0A7A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBADB307160F73C7007D0A7A /* CoreGraphics.framework */; };
@@ -16,8 +17,6 @@
 		BBADB316160F73C7007D0A7A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADB315160F73C7007D0A7A /* Default.png */; };
 		BBADB318160F73C7007D0A7A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADB317160F73C7007D0A7A /* Default@2x.png */; };
 		BBADB31A160F73C7007D0A7A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADB319160F73C7007D0A7A /* Default-568h@2x.png */; };
-		BBADB31D160F73C7007D0A7A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBADB31B160F73C7007D0A7A /* MainStoryboard_iPhone.storyboard */; };
-		BBADB320160F73C7007D0A7A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBADB31E160F73C7007D0A7A /* MainStoryboard_iPad.storyboard */; };
 		BBADB323160F73C7007D0A7A /* NHViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBADB322160F73C7007D0A7A /* NHViewController.mm */; };
 		BBADB47E160F75C2007D0A7A /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = BBADB39B160F75C2007D0A7A /* CMakeLists.txt */; };
 		BBADB480160F75C2007D0A7A /* func_common.inl in Resources */ = {isa = PBXBuildFile; fileRef = BBADB3A4160F75C2007D0A7A /* func_common.inl */; };
@@ -171,6 +170,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65B2FCB416FAD50900A49A3D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		BBADB2FF160F73C7007D0A7A /* Math Library Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math Library Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBADB303160F73C7007D0A7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BBADB305160F73C7007D0A7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -183,8 +183,6 @@
 		BBADB315160F73C7007D0A7A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BBADB317160F73C7007D0A7A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		BBADB319160F73C7007D0A7A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		BBADB31C160F73C7007D0A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		BBADB31F160F73C7007D0A7A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		BBADB321160F73C7007D0A7A /* NHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NHViewController.h; sourceTree = "<group>"; };
 		BBADB322160F73C7007D0A7A /* NHViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NHViewController.mm; sourceTree = "<group>"; };
 		BBADB39B160F75C2007D0A7A /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -732,6 +730,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B2FCB516FAD50900A49A3D /* GLKit.framework in Frameworks */,
 				BBADB304160F73C7007D0A7A /* UIKit.framework in Frameworks */,
 				BBADB306160F73C7007D0A7A /* Foundation.framework in Frameworks */,
 				BBADB308160F73C7007D0A7A /* CoreGraphics.framework in Frameworks */,
@@ -762,6 +761,7 @@
 		BBADB302160F73C7007D0A7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65B2FCB416FAD50900A49A3D /* GLKit.framework */,
 				BBADB303160F73C7007D0A7A /* UIKit.framework */,
 				BBADB305160F73C7007D0A7A /* Foundation.framework */,
 				BBADB307160F73C7007D0A7A /* CoreGraphics.framework */,
@@ -774,8 +774,6 @@
 			children = (
 				BBADB312160F73C7007D0A7A /* NHAppDelegate.h */,
 				BBADB313160F73C7007D0A7A /* NHAppDelegate.mm */,
-				BBADB31B160F73C7007D0A7A /* MainStoryboard_iPhone.storyboard */,
-				BBADB31E160F73C7007D0A7A /* MainStoryboard_iPad.storyboard */,
 				BBADB321160F73C7007D0A7A /* NHViewController.h */,
 				BBADB322160F73C7007D0A7A /* NHViewController.mm */,
 				BBADB30A160F73C7007D0A7A /* Supporting Files */,
@@ -1721,8 +1719,6 @@
 				BBADB316160F73C7007D0A7A /* Default.png in Resources */,
 				BBADB318160F73C7007D0A7A /* Default@2x.png in Resources */,
 				BBADB31A160F73C7007D0A7A /* Default-568h@2x.png in Resources */,
-				BBADB31D160F73C7007D0A7A /* MainStoryboard_iPhone.storyboard in Resources */,
-				BBADB320160F73C7007D0A7A /* MainStoryboard_iPad.storyboard in Resources */,
 				BBADB47E160F75C2007D0A7A /* CMakeLists.txt in Resources */,
 				BBADB480160F75C2007D0A7A /* func_common.inl in Resources */,
 				BBADB481160F75C2007D0A7A /* func_exponential.inl in Resources */,
@@ -1899,22 +1895,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BBADB31B160F73C7007D0A7A /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBADB31C160F73C7007D0A7A /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		BBADB31E160F73C7007D0A7A /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBADB31F160F73C7007D0A7A /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1974,6 +1954,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				INFOPLIST_FILE = "Math Library Test/Math Library Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "../../lib/cml-1_0_2 ../../lib/eigen-eigen-13a11181fc5a ../../lib/glm-0.9.3.B";
 				WRAPPER_EXTENSION = app;
@@ -1985,6 +1966,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				INFOPLIST_FILE = "Math Library Test/Math Library Test-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "../../lib/cml-1_0_2 ../../lib/eigen-eigen-13a11181fc5a ../../lib/glm-0.9.3.B";
 				WRAPPER_EXTENSION = app;

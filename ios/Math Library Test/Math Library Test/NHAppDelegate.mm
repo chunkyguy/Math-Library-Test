@@ -7,11 +7,14 @@
 //
 
 #import "NHAppDelegate.h"
+#import "NHViewController.h"
 
 @implementation NHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NHViewController *v = [[NHViewController alloc] initWithNibName:nil bundle:nil];
+    [v runTests:nil];
     // Override point for customization after application launch.
     return YES;
 }

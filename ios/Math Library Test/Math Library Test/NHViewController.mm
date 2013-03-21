@@ -32,14 +32,18 @@
 
 - (IBAction)runTests:(id)sender
 {
-	self.button.hidden = YES;
-	self.outputText.text = @"Running...";
+//	self.button.hidden = YES;
+//	self.outputText.text = @"Running...";
 	TestResults tr = testLibraries(10);
-	self.outputText.text = [NSString stringWithFormat:@"Eigen\n=====\nAdditions: %ld\nMultiplications: %ld\n\nGLM\n===\nAdditions: %ld\nMultiplications: %ld\n\nCML\n===\nAdditions: %ld\nMultiplications: %ld",
-							tr.eigen.additions, tr.eigen.multiplications,
-							tr.glm.additions, tr.glm.multiplications,
-							tr.cml.additions, tr.cml.multiplications
-							];
+    NSString *output = [NSString stringWithFormat:
+                        @"Eigen\n=====\nAdditions: %ld\nMultiplications: %ld\n\nGLM\n===\nAdditions: %ld\nMultiplications: %ld\n\nCML\n===\nAdditions: %ld\nMultiplications: %ld\n\nGLKMath\n===\nAdditions: %ld\nMultiplications: %ld",
+                        tr.eigen.additions, tr.eigen.multiplications,
+                        tr.glm.additions, tr.glm.multiplications,
+                        tr.cml.additions, tr.cml.multiplications,
+                        tr.glkMath.additions, tr.glkMath.multiplications
+                        ];
+    NSLog(@"\n%@",output);
+//	self.outputText.text = output;
 }
 
 @end

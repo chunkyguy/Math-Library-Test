@@ -5,7 +5,7 @@
 #include "Driver.h"
 #include "mother.h"
 
-
+//const int NUM_TESTS = 1000;
 const int NUM_TESTS = 1000000;
 //const int NUM_TESTS = 10000000;
 
@@ -15,7 +15,7 @@ const int NUM_TESTS = 1000000;
 #endif
 
 TestResults testLibraries(int count) {
-	TestResults tr = {0};
+	TestResults tr = {-1};
 	
     {
 		
@@ -147,6 +147,39 @@ TestResults testLibraries(int count) {
 		
     }
 	
+    {
+		
+		std::cout << "Testing GLKMath library GLKMatrix4 class." << std::endl;
+				
+        GLKMatrix4* inputA = generateGLKMathMat4s(count);
+        GLKMatrix4* inputB = generateGLKMathMat4s(count);
+        GLKMatrix4* output = generateGLKMathMat4s(count);
+		
+		std::cout << "Performing additions." << std::endl;
+
+		// Time how long it takes to add [count] matrices NUM_TESTS times.
+		struct timeval start, end;
+		gettimeofday(&start, NULL);
+		for(int i = 0; i < NUM_TESTS; i++) {
+            test_glkmath_mat4_addition(inputA, inputB, output, count);
+		}
+		gettimeofday(&end, NULL);
+		tr.glkMath.additions = difference(start, end);
+		
+		std::cout << "Performing multiplications." << std::endl;
+		// Time how long it takes to multiply [count] matrices NUM_TESTS times.
+		gettimeofday(&start, NULL);
+		for(int i = 0; i < NUM_TESTS; i++) {
+            test_glkmath_mat4_multiplication(inputA, inputB, output, count);
+		}
+		gettimeofday(&end, NULL);
+		tr.glkMath.multiplications = difference(start, end);
+		
+		delete[] inputA;
+		delete[] inputB;
+		delete[] output;
+		
+    }
 	return tr;
 }
 
@@ -268,5 +301,36 @@ void test_cml_mat4_multiplication(cml::matrix44f_c* inputA,
     for(int i = 0; i < count; i++) {
         output[i] = inputA[i] * inputB[i];
     }
+}
+
+GLKMatrix4* generateGLKMathMat4s(int count){
+    float* randomNumbers = generateRandomNumbers(count);
+	
+    GLKMatrix4* mats = new GLKMatrix4[count];
+    for(int i = 0; i < count; i++) {
+        mats[i].m00 = randomNumbers[i];
+        mats[i].m11 = randomNumbers[i];
+        mats[i].m22 = randomNumbers[i];
+        mats[i].m33 = 1.0f;
+    }
+	
+    delete[] randomNumbers;
+	
+    return mats;
+    
+}
+
+void test_glkmath_mat4_addition(GLKMatrix4* inputA, GLKMatrix4* inputB,
+                                GLKMatrix4* output, int count){
+    for(int i = 0; i < count; i++) {
+        output[i] = GLKMatrix4Add(inputA[i], inputB[i]);
+    }
+}
+
+void test_glkmath_mat4_multiplication(GLKMatrix4* inputA, GLKMatrix4* inputB,
+                                      GLKMatrix4* output, int count){
+        for(int i = 0; i < count; i++) {
+            output[i] = GLKMatrix4Multiply(inputA[i], inputB[i]);
+        }
 }
 
