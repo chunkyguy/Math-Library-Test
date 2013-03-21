@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		199B675B16FAE4BC0070E053 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B675A16FAE4BC0070E053 /* GLKit.framework */; };
 		BB659F26160F9ED000DB50AE /* Array in Resources */ = {isa = PBXBuildFile; fileRef = BB659CDC160F9ECF00DB50AE /* Array */; };
 		BB659F27160F9ED000DB50AE /* Cholesky in Resources */ = {isa = PBXBuildFile; fileRef = BB659CDD160F9ECF00DB50AE /* Cholesky */; };
 		BB659F28160F9ED000DB50AE /* CholmodSupport in Resources */ = {isa = PBXBuildFile; fileRef = BB659CDE160F9ECF00DB50AE /* CholmodSupport */; };
@@ -192,6 +193,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		199B675A16FAE4BC0070E053 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		BB659CDC160F9ECF00DB50AE /* Array */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Array; sourceTree = "<group>"; };
 		BB659CDD160F9ECF00DB50AE /* Cholesky */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cholesky; sourceTree = "<group>"; };
 		BB659CDE160F9ECF00DB50AE /* CholmodSupport */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CholmodSupport; sourceTree = "<group>"; };
@@ -836,6 +838,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				199B675B16FAE4BC0070E053 /* GLKit.framework in Frameworks */,
 				BBADB304160F73C7007D0A7A /* UIKit.framework in Frameworks */,
 				BBADB306160F73C7007D0A7A /* Foundation.framework in Frameworks */,
 				BBADB308160F73C7007D0A7A /* CoreGraphics.framework in Frameworks */,
@@ -1709,6 +1712,7 @@
 		BBADB302160F73C7007D0A7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				199B675A16FAE4BC0070E053 /* GLKit.framework */,
 				BBADB303160F73C7007D0A7A /* UIKit.framework */,
 				BBADB305160F73C7007D0A7A /* Foundation.framework */,
 				BBADB307160F73C7007D0A7A /* CoreGraphics.framework */,
