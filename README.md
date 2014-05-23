@@ -13,6 +13,7 @@ At the time of writing, the libraries tested are:
 * [GLM](http://glm.g-truc.net/)
 * [CML](http://cmldev.net/)
 * [GLKMath](http://developer.apple.com/library/mac/#documentation/GLkit/Reference/GLKit_Collection/_index.html)
+* [bullet-vectormath](http://bullet.svn.sourceforge.net/viewvc/bullet/trunk/Extras/vectormathlibrary/)
   
 These choices are largely influenced by reading their websites and posts at
 the [Game Development StackExchange](http://gamedev.stackexchange.com/) site:
@@ -140,30 +141,29 @@ Results: iPhone 5s + iOS 7.1.1 + Release mode
 
 ```
 Eigen:
-Additions: 3441.08 milliseconds.
-Multiplications: 13001.98 milliseconds.
+Additions: 3413.55 ms	Multiplications: 10813.43 ms
 
 GLM:
-Additions: 690.06 milliseconds.
-Multiplications: 2067.56 milliseconds.
+Additions: 691.99 ms	Multiplications: 2062.06 ms
 
 CML:
-Additions: 3593.36 milliseconds.
-Multiplications: 12799.92 milliseconds.
+Additions: 3592.93 ms	Multiplications: 12672.40 ms
 
 GLKMath:
-Additions: 485.10 milliseconds.
-Multiplications: 1308.01 milliseconds.
+Additions: 474.29 ms	Multiplications: 1407.87 ms
 
 kazmath:
-Additions: 938.89 milliseconds.
-Multiplications: 1830.91 milliseconds.
+Additions: 1066.58 ms	Multiplications: 1837.57 ms
+
+bullet:
+Additions: 791.20 ms	Multiplications: 1884.62 ms
 
 ```
 
 Change Log
 -----------
 
-- Added GLKMath library.
-- Added kazmath library.
-- Modified the time calculation. Now based on the clock() function.
+- Add GLKMath library.
+- Add kazmath library.
+- Modify the time calculation. Now based on the clock() function.
+- Add bullet vectormath library.

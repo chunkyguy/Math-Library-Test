@@ -143,3 +143,10 @@ Kazmath
 Like GLKMath it is a very small library. I don't have much experience with Kazmath, but I guess being C based it should just run on all platforms without any issues.
 
 Kazmath is licensed under [Modified BSD License](https://github.com/Kazade/kazmath/blob/master/LICENSE.md).
+
+Bullet Vectormath
+=================
+
+[Vectormath](http://bullet.svn.sourceforge.net/viewvc/bullet/trunk/Extras/vectormathlibrary/) is a 3D math library.
+
+Vectormath's license can be found [here](http://bullet.svn.sourceforge.net/viewvc/bullet/trunk/Extras/vectormathlibrary/LICENSE?revision=1066&view=markup).
