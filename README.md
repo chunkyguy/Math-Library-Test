@@ -13,6 +13,7 @@ At the time of writing, the libraries tested are:
 * [GLM](http://glm.g-truc.net/)
 * [CML](http://cmldev.net/)
 * [GLKMath](http://developer.apple.com/library/mac/#documentation/GLkit/Reference/GLKit_Collection/_index.html)
+* [kazmath](https://github.com/Kazade/kazmath)
   
 These choices are largely influenced by reading their websites and posts at
 the [Game Development StackExchange](http://gamedev.stackexchange.com/) site:
