@@ -1,6 +1,7 @@
 #ifndef _DRIVER_H_
 #define _DRIVER_H_
 
+#include "kazmath/kazmath.h"
 #include "cml/cml.h"
 #include "Eigen/Dense"
 //#ifndef ANDROID
@@ -10,8 +11,8 @@
 //#endif
 
 struct TestResult {
-	long additions;
-	long multiplications;
+	double additions;
+	double multiplications;
 };
 
 struct TestResults {
@@ -19,6 +20,7 @@ struct TestResults {
 	TestResult glm;
 	TestResult cml;
 	TestResult glkMath;
+    TestResult kazmath;
 };
 
 /**
@@ -31,7 +33,7 @@ TestResults testLibraries(int count);
 /**
  * Print the time difference between two timevals in milliseconds.
  */
-long difference(timeval& start, timeval& end);
+double difference(clock_t & start, clock_t & end);
 
 /**
  * Create a float array with a size specified by count. Each value is
