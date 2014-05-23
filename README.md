@@ -135,35 +135,35 @@ Despite GLM being faster on the mobile devices, I am more inclined to use Eigen
 due to its speed on the tested Intel CPU and its much better documentation and
 more active community.
 
-Sid's Comments
-==============
-
-Here are my results after adding GLKMath to the list:
+Results: iPhone 5s + iOS 7.1.1 + Release mode
+----------------------------------------------
 
 ```
 Eigen:
-Additions: 77624 milliseconds.
-Multiplications: 227179 milliseconds.
+Additions: 3441.08 milliseconds.
+Multiplications: 13001.98 milliseconds.
 
 GLM:
-Additions: 23935 milliseconds.
-Multiplications: 80599 milliseconds.
+Additions: 690.06 milliseconds.
+Multiplications: 2067.56 milliseconds.
 
 CML:
-Additions: 102390 milliseconds.
-Multiplications: 161059 milliseconds.
+Additions: 3593.36 milliseconds.
+Multiplications: 12799.92 milliseconds.
 
 GLKMath:
-Additions: 8526 milliseconds.
-Multiplications: 21775 milliseconds.
+Additions: 485.10 milliseconds.
+Multiplications: 1308.01 milliseconds.
+
+kazmath:
+Additions: 938.89 milliseconds.
+Multiplications: 1830.91 milliseconds.
+
 ```
 
-I think I'll be going with GLKMath, as my primary target is iDevices, and the GLKMath library 
-has NEON instrunctions to work more effectively on the real devices.
+Change Log
+-----------
 
-Another reason is that GLKMath is actually C based, so improved performance. 
-
-Only downsides are that, there are no in-built overloaded operators, 
-but that's just a minor excuse for not using GLKMath. 
-And, the GLKMath library is pretty basic compared to others, 
-but I think I can live with that, I'm a man with simple needs after all. :D
+- Added GLKMath library.
+- Added kazmath library.
+- Modified the time calculation. Now based on the clock() function.

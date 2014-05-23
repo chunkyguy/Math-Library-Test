@@ -226,6 +226,7 @@
 		19464A6F192FEBFC00971460 /* vec2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec2.cpp; sourceTree = "<group>"; };
 		19464A70192FEBFC00971460 /* vec3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec3.cpp; sourceTree = "<group>"; };
 		19464A71192FEBFC00971460 /* vec4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vec4.cpp; sourceTree = "<group>"; };
+		19464A82192FF81B00971460 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 		199B675A16FAE4BC0070E053 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		BB659CDC160F9ECF00DB50AE /* Array */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Array; sourceTree = "<group>"; };
 		BB659CDD160F9ECF00DB50AE /* Cholesky */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cholesky; sourceTree = "<group>"; };
@@ -1743,6 +1744,7 @@
 		BBADB2F4160F73C7007D0A7A = {
 			isa = PBXGroup;
 			children = (
+				19464A82192FF81B00971460 /* README.md */,
 				BBADB32A160F758C007D0A7A /* Math Libraries */,
 				BBADB309160F73C7007D0A7A /* Math Library Test */,
 				BBADB302160F73C7007D0A7A /* Frameworks */,
