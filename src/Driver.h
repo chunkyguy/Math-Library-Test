@@ -1,6 +1,7 @@
 #ifndef _DRIVER_H_
 #define _DRIVER_H_
 
+#include "vectormath/scalar/cpp/vectormath_aos.h"
 #include "kazmath/kazmath.h"
 #include "cml/cml.h"
 #include "Eigen/Dense"
@@ -21,6 +22,7 @@ struct TestResults {
 	TestResult cml;
 	TestResult glkMath;
     TestResult kazmath;
+    TestResult bullet;
 };
 
 /**

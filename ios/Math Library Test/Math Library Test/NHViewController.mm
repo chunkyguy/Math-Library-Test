@@ -51,16 +51,18 @@
                          @"CML\n===\nAdditions: %.2f\tMultiplications: %.2f\n\n"
                          @"GLKMath\n===\nAdditions: %.2f\tMultiplications: %.2f\n\n"
                          @"kazmath\n===\nAdditions: %.2f\tMultiplications: %.2f\n\n"
+                         @"bullet\n===\nAdditions: %.2f\tMultiplications: %.2f\n\n"
                          ,
                          tr.eigen.additions, tr.eigen.multiplications,
                          tr.glm.additions, tr.glm.multiplications,
                          tr.cml.additions, tr.cml.multiplications,
                          tr.glkMath.additions, tr.glkMath.multiplications,
-                         tr.kazmath.additions, tr.kazmath.multiplications
+                         tr.kazmath.additions, tr.kazmath.multiplications,
+                         tr.bullet.additions, tr.bullet.multiplications
                          ];
     
 	self.outputText.text = [NSString stringWithFormat:@"%@", results];
-    
+    NSLog(@"%@", results);
 }
 
 @end

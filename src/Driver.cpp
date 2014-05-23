@@ -208,6 +208,41 @@ void test_kazmath_mat4_multiplication(kmMat4* inputA, kmMat4* inputB,
 }
 
 
+#pragma mark - bullet
+Vectormath::Aos::Matrix4 *generateBulletMat4s(int count) {
+    float* randomNumbers = generateRandomNumbers(count);
+	
+    Vectormath::Aos::Matrix4* mats = new Vectormath::Aos::Matrix4[count];
+    for(int i = 0; i < count; i++) {
+        mats[i].setElem(0, 0, randomNumbers[i]);
+        mats[i].setElem(1, 1, randomNumbers[i]);
+        mats[i].setElem(2, 2, randomNumbers[i]);
+        mats[i].setElem(3, 3, randomNumbers[i]);
+    }
+	
+    delete[] randomNumbers;
+	
+    return mats;
+}
+
+void test_bullet_mat4_addition(Vectormath::Aos::Matrix4* inputA,
+                               Vectormath::Aos::Matrix4* inputB,
+                               Vectormath::Aos::Matrix4* output,
+                               int count){
+    for(int i = 0; i < count; i++) {
+        output[i] = inputA[i] + inputB[i];
+    }
+}
+
+void test_bullet_mat4_multiplication(Vectormath::Aos::Matrix4* inputA,
+                                     Vectormath::Aos::Matrix4* inputB,
+                                      Vectormath::Aos::Matrix4* output,
+                                     int count){
+    for(int i = 0; i < count; i++) {
+        output[i] = inputA[i] * inputB[i];
+    }
+}
+
 
 #pragma mark - Test
 TestResults testLibraries(int count) {
@@ -401,6 +436,40 @@ TestResults testLibraries(int count) {
 		}
         end = clock();
 		tr.kazmath.multiplications = difference(start, end);
+		
+		delete[] inputA;
+		delete[] inputB;
+		delete[] output;
+		
+    }
+
+    
+    {
+		
+		std::cout << "Testing bullet library scalar::Aos::Matrix4 class." << std::endl;
+        
+        Vectormath::Aos::Matrix4* inputA = generateBulletMat4s(count);
+        Vectormath::Aos::Matrix4* inputB = generateBulletMat4s(count);
+        Vectormath::Aos::Matrix4* output = generateBulletMat4s(count);
+		
+		std::cout << "Performing additions." << std::endl;
+        
+		// Time how long it takes to add [count] matrices NUM_TESTS times.
+        start = clock();
+		for(int i = 0; i < NUM_TESTS; i++) {
+            test_bullet_mat4_addition(inputA, inputB, output, count);
+		}
+        end = clock();
+		tr.bullet.additions = difference(start, end);
+		
+		std::cout << "Performing multiplications." << std::endl;
+		// Time how long it takes to multiply [count] matrices NUM_TESTS times.
+        start = clock();
+		for(int i = 0; i < NUM_TESTS; i++) {
+            test_bullet_mat4_multiplication(inputA, inputB, output, count);
+		}
+        end = clock();
+		tr.bullet.multiplications = difference(start, end);
 		
 		delete[] inputA;
 		delete[] inputB;
