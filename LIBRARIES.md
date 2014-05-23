@@ -114,3 +114,32 @@ GLM is licensed under the [MIT
 License](http://en.wikipedia.org/wiki/MIT_License) (Expat License) which is
 very permissive and means GLM is a good candidate for any project requiring a
 math library.
+
+GLKMath
+========
+
+GLKMath is a C based library provided with the GLKit framework. It is designed
+to work with iOS and OS X. Most of the functions are overloaded with NEON 
+instruction set for ARM devices and SSE for x86 hardware.
+
+Most of the code is inlined in header files, except for functions that couldn't be 
+inlined for obvious reasons like matrix invert.
+
+GLKMath supports vectors, matrices of dimension 2, 3, 4 and quaternions. GLKMath
+also provides matrix operations from the OpenGL fixed function pipeline days.
+
+As GLKMath is C based library so no operator overloading is possible. Most of the 
+operations take input as function parameters and return a struct.
+
+    GLKVector3 c = GLKVector3Add(a, b);
+
+With modern hardwares returning structs shouldn't be a big deal. Still, for hardcore
+operator overloading fans can checkout the [GLKitMathCPP repository](https://github.com/darknoon/GLKitMathCPP) which adds operator overloadings for major operations.
+
+Kazmath
+========
+
+[Kazmath](https://github.com/Kazade/kazmath) is a C based library that was popularized by the Cocos2d engine. 
+Like GLKMath it is a very small library. I don't have much experience with Kazmath, but I guess being C based it should just run on all platforms without any issues.
+
+Kazmath is licensed under [Modified BSD License](https://github.com/Kazade/kazmath/blob/master/LICENSE.md).
