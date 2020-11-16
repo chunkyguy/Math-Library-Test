@@ -36,3 +36,6 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+# fetched libraries
+libs/

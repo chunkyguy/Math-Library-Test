@@ -1,11 +1,9 @@
-C++ Math Library Test
+C++ Math Library Test (iOS)
 =====================
 
 Introduction
 ------------
-This repository contains some simple tests between different C++ math
-libraries that I wrote during the process of selecting a math library to use for
-game development.
+This repository contains some simple tests between different C++ math libraries that I wrote during the process of selecting a math library to use for game development.
 
 At the time of writing, the libraries tested are:
 
@@ -16,6 +14,31 @@ At the time of writing, the libraries tested are:
 * [kazmath](https://github.com/Kazade/kazmath)
 * [bullet-vectormath](http://bullet.svn.sourceforge.net/viewvc/bullet/trunk/Extras/vectormathlibrary/)
   
+Results: iPhone 5s + iOS 7.1.1 + Release mode
+----------------------------------------------
+```
+Eigen:
+Additions: 3413.55 ms  Multiplications: 10813.43 ms
+
+GLM:
+Additions: 691.99 ms  Multiplications: 2062.06 ms
+
+CML:
+Additions: 3592.93 ms  Multiplications: 12672.40 ms
+
+GLKMath:
+Additions: 474.29 ms  Multiplications: 1407.87 ms
+
+kazmath:
+Additions: 1066.58 ms  Multiplications: 1837.57 ms
+
+bullet:
+Additions: 791.20 ms  Multiplications: 1884.62 ms
+```
+
+Requirements
+------------
+
 These choices are largely influenced by reading their websites and posts at
 the [Game Development StackExchange](http://gamedev.stackexchange.com/) site:
 
@@ -26,12 +49,6 @@ the [Game Development StackExchange](http://gamedev.stackexchange.com/) site:
 * [Complete Math Library for use in OpenGL ES 2.0
   Game?](http://gamedev.stackexchange.com/questions/8234/complete-math-library-for-use-in-opengl-es-2-0-game)
 
-This project uses CMake and has been tested on Mac OS X Lion and Android
-(android-9 platform version, including armeabi, armeabi-v7a and armeabi-v7a
-with NEON).
-
-Requirements
-------------
 My requirements are:
 
 * C++
@@ -74,32 +91,6 @@ are:
 * Possibly noise generation
 * Ease of integration with gl functions like glTranslate()
 
-Running the tests
------------------
-    git clone git@github.com:mfoo/Math-Library-Test.git MathTest
-    cd MathTest
-    mkdir build
-    cd build
-    cmake ..
-    make
-
-To run the tests on Android you will need the
-[Android NDK](http://developer.android.com/sdk/ndk/index.html) and
-[android-cmake](http://code.google.com/p/android-cmake/). For Ant you will need
-to specify your Android SDK location in `android/local.properties`. I have
-included prebuilt libraries for armeabi and armeabi-v7a so if you don't want to
-compile them yourself you can skip straight to the ant commants.
-
-    git clone git@github.com:mfoo/Math-Library-Test.git MathTest
-    cd MathTest
-    mkdir build
-    cd build
-    cmake-android ..
-    make
-    cd ../android
-    ant debug
-    ant installd
-
 Results
 -------
 So far I've tested matrix addition and multiplication. `src/Main.cpp` contains
@@ -136,30 +127,6 @@ both ABIs.
 Despite GLM being faster on the mobile devices, I am more inclined to use Eigen
 due to its speed on the tested Intel CPU and its much better documentation and
 more active community.
-
-Results: iPhone 5s + iOS 7.1.1 + Release mode
-----------------------------------------------
-
-```
-Eigen:
-Additions: 3413.55 ms	Multiplications: 10813.43 ms
-
-GLM:
-Additions: 691.99 ms	Multiplications: 2062.06 ms
-
-CML:
-Additions: 3592.93 ms	Multiplications: 12672.40 ms
-
-GLKMath:
-Additions: 474.29 ms	Multiplications: 1407.87 ms
-
-kazmath:
-Additions: 1066.58 ms	Multiplications: 1837.57 ms
-
-bullet:
-Additions: 791.20 ms	Multiplications: 1884.62 ms
-
-```
 
 Change Log
 -----------
