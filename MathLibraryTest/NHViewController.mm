@@ -56,12 +56,14 @@
   [_activityView removeFromSuperview];
 
   NSString *results = [NSString stringWithFormat:
-                       @"| Eigen | %.2f | %.2f |\n"
-                       @"| GLM | %.2f | %.2f |\n"
-                       @"| CML | %.2f | %.2f |\n"
-                       @"| GLKMath | %.2f | %.2f |\n"
-                       @"| kazmath | %.2f | %.2f |\n"
-                       @"| bullet | %.2f | %.2f |\n"
+                       @"| Library | Additions (ms) | Multiplications (ms) |\n"
+                       @"|---------|----------------|----------------------|\n"
+                       @"| Eigen | %010.2f | %010.2f |\n"
+                       @"| GLM | %010.2f | %010.2f |\n"
+                       @"| CML | %010.2f | %010.2f |\n"
+                       @"| GLKMath | %010.2f | %010.2f |\n"
+                       @"| kazmath | %010.2f | %010.2f |\n"
+                       @"| bullet | %010.2f | %010.2f |\n"
                        ,
                        tr.eigen.additions, tr.eigen.multiplications,
                        tr.glm.additions, tr.glm.multiplications,
