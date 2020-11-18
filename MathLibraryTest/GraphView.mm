@@ -10,6 +10,12 @@
   std::vector<TestResult> _testResults;
 }
 
+- (void)awakeFromNib
+{
+  [super awakeFromNib];
+  [self setBackgroundColor:[UIColor whiteColor]];
+}
+
 - (void)setResults:(const std::vector<TestResult> &)results;
 {
   _testResults = results;
@@ -19,64 +25,67 @@
 - (void)drawRect:(CGRect)rect
 {
   CGContextRef context = UIGraphicsGetCurrentContext();
+
+
   CGFloat width = CGRectGetWidth(rect);
   CGFloat height = CGRectGetHeight(rect);
+
   UIFont *font = [UIFont systemFontOfSize:12.f];
 
-  CGFloat maxY = 0;
+  CGFloat maxValue = 0;
   for (TestResult t : _testResults) {
-    maxY = fmax(maxY, fmax(t.additions, t.multiplications));
+    maxValue = fmax(maxValue, fmax(t.additions, t.multiplications));
   }
 
-  CGFloat textDrawOffsetY = 20;
   CGFloat dx = width / _testResults.size();
   for (int i = 0; i < _testResults.size(); ++i) {
     TestResult tr = _testResults[i];
 
-    CGFloat xMin = i * dx;
-    CGFloat xMax = (i + 1) *dx;
-    CGFloat barWidth = ((xMax - xMin) / 2.f) - 4.0f;
-    CGFloat yMin = 20.f;
+    CGFloat minX = i * dx;
+    CGFloat maxX = (i + 1) *dx;
+    CGFloat barWidth = ((maxX - minX) / 2.f) - 4.0f;
+    CGFloat textHeight = 20.f;
+    CGFloat maxBarHeight = height - (textHeight * 3);
 
     {
-      CGFloat barHeight = (tr.additions / maxY) * (height - yMin - textDrawOffsetY);
-      CGRect rect = CGRectMake(xMin, yMin, barWidth, barHeight);
+      CGFloat barHeight = (tr.additions / maxValue) * maxBarHeight;
+      CGRect rect = CGRectMake(minX, height - barHeight - (textHeight * 2), barWidth, barHeight);
       UIColor *color = [UIColor colorWithHue:0.3f saturation:0.8 brightness:0.7 alpha:1.0];
       CGContextSetFillColorWithColor(context, [color CGColor]);
       CGContextFillRect(context, rect);
       [self drawText:@"Add"
-             atPoint:CGPointMake(xMin, yMin)
+             atPoint:CGPointMake(minX, height - (textHeight * 2))
                width:barWidth
                 font:font
-               color:[UIColor whiteColor]];
+               color:[UIColor blackColor]];
       [self drawText:[NSString stringWithFormat:@"%.2f ns",tr.additions]
-             atPoint:CGPointMake(xMin, barHeight + textDrawOffsetY)
+             atPoint:CGPointMake(minX, height - barHeight - (textHeight * 3))
                width:barWidth
                 font:font
                color:[UIColor blackColor]];
     }
 
     {
-      CGFloat barHeight = (tr.multiplications / maxY) * (height - yMin - textDrawOffsetY);
-      CGRect rect = CGRectMake(xMin + barWidth, yMin, barWidth, barHeight);
+      CGFloat barHeight = (tr.multiplications / maxValue) * maxBarHeight;
+      CGRect rect = CGRectMake(minX + barWidth, height - barHeight - (textHeight * 2), barWidth, barHeight);
       UIColor *color = [UIColor colorWithHue:0.7f saturation:0.8 brightness:0.7 alpha:1.0];
       CGContextSetFillColorWithColor(context, [color CGColor]);
       CGContextFillRect(context, rect);
       [self drawText:@"Multiply"
-             atPoint:CGPointMake(xMin + barWidth, yMin)
+             atPoint:CGPointMake(minX + barWidth, height - (textHeight * 2))
                width:barWidth
                 font:font
-               color:[UIColor whiteColor]];
+               color:[UIColor blackColor]];
       [self drawText:[NSString stringWithFormat:@"%.2f ns",tr.multiplications]
-             atPoint:CGPointMake(xMin + barWidth, barHeight + textDrawOffsetY)
+             atPoint:CGPointMake(minX + barWidth, height - barHeight - (textHeight * 3))
                width:barWidth
                 font:font
                color:[UIColor blackColor]];
     }
 
     [self drawText:[NSString stringWithCString:tr.name.c_str() encoding:NSUTF8StringEncoding]
-           atPoint:CGPointMake(xMin, 0)
-             width:xMax - xMin
+           atPoint:CGPointMake(minX, height - textHeight)
+             width:maxX - minX
               font:font
              color:[UIColor blackColor]];
   }
