@@ -7,7 +7,6 @@
 //
 
 #import "NHViewController.h"
-
 #import "Driver.h"
 
 @interface NHViewController ()
@@ -55,10 +54,10 @@
   [self.graphView setResults:testResults];
 
   NSMutableArray *results = [NSMutableArray array];
-  [results addObject:@"| Library | Additions (ms) | Multiplications (ms) |"];
+  [results addObject:@"| Library | Additions (ns) | Multiplications (ns) |"];
   [results addObject:@"|---------|----------------|----------------------|"];
   for (TestResult t : testResults) {
-    [results addObject:[NSString stringWithFormat:@"| %s | %010.2f | %010.2f |", t.name.c_str(), t.additions, t.multiplications]];
+    [results addObject:[NSString stringWithFormat:@"| %s | %05.2f | %05.2f |", t.name.c_str(), t.additions, t.multiplications]];
   }
   NSString *text = [results componentsJoinedByString:@"\n"];
   NSLog(@"\n%@", text);

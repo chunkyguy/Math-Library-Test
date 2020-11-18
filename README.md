@@ -27,15 +27,14 @@ Results for each library vary greatly with architecture and optimisation level.
 
 **Mac - 2.3 GHz 8-Core Intel Core i9 - 32 GB RAM**
 
-| Library | Additions (ms) | Multiplications (ms) |
+| Library | Additions (ns) | Multiplications (ns) |
 |---------|----------------|----------------------|
-| Eigen   | 0056378.55     | 0217075.68           |
-| GLM     | 0017431.80     | 0235920.92           |
-| CML     | 0156321.33     | 0254889.30           |
-| GLKMath | 0004813.98     | 0073646.90           |
-| kazmath | 0008278.54     | 0133849.60           |
-| bullet  | 0019107.55     | 0339817.13           |
-
+| Eigen   | 3626.55        | 13332.43             |
+| GLM     | 6184.59        | 12889.82             |
+| CML     | 13315.38       | 19489.32             |
+| GLKit   | 183.46         | 2356.84              |
+| Kazmath | 333.41         | 7899.19              |
+| Bullet  | 726.34         | 5678.55              |
 Requirements
 ------------
 

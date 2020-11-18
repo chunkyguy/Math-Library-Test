@@ -44,35 +44,28 @@ void test_bullet_mat4_multiplication(Vectormath::Aos::Matrix4* inputA,
 
 TestResult test_bullet(int count, int num_tests)
 {
-  clock_t start, end;
   TestResult tr;
-
   tr.name = "Bullet";
-
-  std::cout << "Testing bullet library scalar::Aos::Matrix4 class." << std::endl;
 
   Vectormath::Aos::Matrix4* inputA = generateBulletMat4s(count);
   Vectormath::Aos::Matrix4* inputB = generateBulletMat4s(count);
   Vectormath::Aos::Matrix4* output = generateBulletMat4s(count);
 
-  std::cout << "Performing additions." << std::endl;
-
-  // Time how long it takes to add [count] matrices NUM_TESTS times.
-  start = clock();
-  for(int i = 0; i < num_tests; i++) {
-    test_bullet_mat4_addition(inputA, inputB, output, count);
+  {
+    kClockBegin
+    for(int i = 0; i < num_tests; i++) {
+      test_bullet_mat4_addition(inputA, inputB, output, count);
+    }
+    kClockEnd(tr.additions);
   }
-  end = clock();
-  tr.additions = difference(start, end);
 
-  std::cout << "Performing multiplications." << std::endl;
-  // Time how long it takes to multiply [count] matrices NUM_TESTS times.
-  start = clock();
-  for(int i = 0; i < num_tests; i++) {
-    test_bullet_mat4_multiplication(inputA, inputB, output, count);
+  {
+    kClockBegin
+    for(int i = 0; i < num_tests; i++) {
+      test_bullet_mat4_multiplication(inputA, inputB, output, count);
+    }
+    kClockEnd(tr.multiplications);
   }
-  end = clock();
-  tr.multiplications = difference(start, end);
 
   delete[] inputA;
   delete[] inputB;

@@ -49,7 +49,7 @@
                width:barWidth
                 font:font
                color:[UIColor whiteColor]];
-      [self drawText:[NSString stringWithFormat:@"%.2f ms",tr.additions]
+      [self drawText:[NSString stringWithFormat:@"%.2f ns",tr.additions]
              atPoint:CGPointMake(xMin, barHeight + textDrawOffsetY)
                width:barWidth
                 font:font
@@ -67,7 +67,7 @@
                width:barWidth
                 font:font
                color:[UIColor whiteColor]];
-      [self drawText:[NSString stringWithFormat:@"%.2f ms",tr.multiplications]
+      [self drawText:[NSString stringWithFormat:@"%.2f ns",tr.multiplications]
              atPoint:CGPointMake(xMin + barWidth, barHeight + textDrawOffsetY)
                width:barWidth
                 font:font

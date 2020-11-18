@@ -5,21 +5,26 @@
 
 #ifndef Utils_hpp
 #define Utils_hpp
-#include <sys/time.h>
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <chrono>
+
+#define kClockBegin auto start = std::chrono::high_resolution_clock::now();
+
+#define kClockEnd(var) do { \
+  auto end = std::chrono::high_resolution_clock::now(); \
+  double time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count(); \
+  var = time/num_tests; \
+} while(0)
+
+typedef double TestTime;
 
 struct TestResult {
   std::string name;
-  double additions;
-  double multiplications;
+  TestTime additions;
+  TestTime multiplications;
 };
-
-/**
- * Print the time difference between two timevals in milliseconds.
- */
-double difference(clock_t & start, clock_t & end);
 
 /**
  * Create a float array with a size specified by count. Each value is

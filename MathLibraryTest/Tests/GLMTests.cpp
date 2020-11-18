@@ -40,35 +40,29 @@ void test_glm_mat4_multiplication(glm::mat4* inputA, glm::mat4* inputB,
 
 TestResult test_glm(int count, int num_tests)
 {
-  clock_t start, end;
   TestResult tr;
-
   tr.name = "GLM";
 
-  std::cout << "Testing GLM library Matrix4f class." << std::endl;
-  
   glm::mat4* inputA = generateGLMMat4s(count);
   glm::mat4* inputB = generateGLMMat4s(count);
   glm::mat4* output = generateGLMMat4s(count);
   
-  std::cout << "Performing additions." << std::endl;
-  // Time how long it takes to add [count] matrices NUM_TESTS times.
-  start = clock();
-  for(int i = 0; i < num_tests; i++) {
-    test_glm_mat4_addition(inputA, inputB, output, count);
+  {
+    kClockBegin
+    for(int i = 0; i < num_tests; i++) {
+      test_glm_mat4_addition(inputA, inputB, output, count);
+    }
+    kClockEnd(tr.additions);
   }
-  end = clock();
-  tr.additions = difference(start, end);
-  
-  std::cout << "Performing multiplications." << std::endl;
-  // Time how long it takes to multiply [count] matrices NUM_TESTS times.
-  start = clock();
-  for(int i = 0; i < num_tests; i++) {
-    test_glm_mat4_multiplication(inputA, inputB, output, count);
+
+  {
+    kClockBegin
+    for(int i = 0; i < num_tests; i++) {
+      test_glm_mat4_multiplication(inputA, inputB, output, count);
+    }
+    kClockEnd(tr.multiplications);
   }
-  end = clock();
-  tr.multiplications = difference(start, end);
-  
+
   delete[] inputA;
   delete[] inputB;
   delete[] output;

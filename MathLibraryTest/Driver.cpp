@@ -6,9 +6,8 @@
 #include "KazmathTests.hpp"
 #include "BulletTests.hpp"
 
-const int num_tests = 1000;
-//const int num_tests = 1000000;
-//const int num_tests = 10000000;
+//const int num_tests = 100000;
+const int num_tests = 10000000;
 
 #pragma mark - Test
 std::vector<TestResult> testLibraries(int count) {

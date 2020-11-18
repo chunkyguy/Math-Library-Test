@@ -44,36 +44,29 @@ void test_eigen_mat4_multiplication(Eigen::Matrix4f* inputA,
 
 TestResult test_eigen(int count, int num_tests)
 {
-  clock_t start, end;
   TestResult tr;
 
   tr.name = "Eigen";
-
-  std::cout << "Testing Eigen library Matrix4f class." << std::endl;
 
   Eigen::Matrix4f* inputA = generateEigenMat4s(count);
   Eigen::Matrix4f* inputB = generateEigenMat4s(count);
   Eigen::Matrix4f* output = generateEigenMat4s(count);
 
-  std::cout << "Performing additions." << std::endl;
-
-  // Time how long it takes to add [count] matrices NUM_TESTS times.
-  start = clock();
-  for(int i = 0; i < num_tests; i++) {
-    test_eigen_mat4_addition(inputA, inputB, output, count);
+  {
+    kClockBegin
+    for(int i = 0; i < num_tests; i++) {
+      test_eigen_mat4_addition(inputA, inputB, output, count);
+    }
+    kClockEnd(tr.additions);
   }
-  end = clock();
-  tr.additions = difference(start, end);
 
-  std::cout << "Performing multiplications." << std::endl;
-
-  // Time how long it takes to multiply [count] matrices NUM_TESTS times.
-  start = clock();
-  for(int i = 0; i < num_tests; i++) {
-    test_eigen_mat4_multiplication(inputA, inputB, output, count);
+  {
+    kClockBegin
+    for(int i = 0; i < num_tests; i++) {
+      test_eigen_mat4_multiplication(inputA, inputB, output, count);
+    }
+    kClockEnd(tr.multiplications);
   }
-  end = clock();
-  tr.multiplications = difference(start, end);
 
   delete[] inputA;
   delete[] inputB;
