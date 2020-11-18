@@ -7,8 +7,8 @@
 #include "BulletTests.hpp"
 #include "SIMDTests.hpp"
 
-const int num_tests = 1000;
-//const int num_tests = 10000000;
+//const int num_tests = 1000;
+const int num_tests = 10000000;
 
 #pragma mark - Test
 std::vector<TestResult> testLibraries(int count) {
