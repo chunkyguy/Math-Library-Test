@@ -94,6 +94,7 @@ are:
 Change Log
 -----------
 
+- Remove Android tests
 - Add GLKMath library.
 - Add kazmath library.
 - Modify the time calculation. Now based on the clock() function.
