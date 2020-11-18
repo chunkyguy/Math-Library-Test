@@ -79,7 +79,7 @@
 		79E7596D2562C60400A49F1D /* plane.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plane.c; sourceTree = "<group>"; };
 		79E7596E2562C60400A49F1D /* quaternion.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quaternion.c; sourceTree = "<group>"; };
 		79E7596F2562C60400A49F1D /* aabb2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aabb2.c; sourceTree = "<group>"; };
-		79E759802562D0CF00A49F1D /* Math Library Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Math Library Test.entitlements"; sourceTree = "<group>"; };
+		79E759802562D0CF00A49F1D /* MathLibraryTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MathLibraryTest.entitlements; sourceTree = "<group>"; };
 		79E759882562D43D00A49F1D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		BBADB2FF160F73C7007D0A7A /* Math Library Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Math Library Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBADB303160F73C7007D0A7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -167,7 +167,7 @@
 				79E759452562C54E00A49F1D /* README.md */,
 				79E759882562D43D00A49F1D /* .gitignore */,
 				79E759472562C54E00A49F1D /* update_libs.sh */,
-				BBADB309160F73C7007D0A7A /* Math Library Test */,
+				BBADB309160F73C7007D0A7A /* MathLibraryTest */,
 				BBADB302160F73C7007D0A7A /* Frameworks */,
 				BBADB300160F73C7007D0A7A /* Products */,
 			);
@@ -193,10 +193,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BBADB309160F73C7007D0A7A /* Math Library Test */ = {
+		BBADB309160F73C7007D0A7A /* MathLibraryTest */ = {
 			isa = PBXGroup;
 			children = (
-				79E759802562D0CF00A49F1D /* Math Library Test.entitlements */,
+				79E759802562D0CF00A49F1D /* MathLibraryTest.entitlements */,
 				79E759502562C60400A49F1D /* kazmath */,
 				79E7594D2562C5BF00A49F1D /* mother.cpp */,
 				79E7594C2562C5BF00A49F1D /* mother.h */,
@@ -210,7 +210,7 @@
 				BBADB31E160F73C7007D0A7A /* MainStoryboard_iPad.storyboard */,
 				BBADB30A160F73C7007D0A7A /* Supporting Files */,
 			);
-			path = "Math Library Test";
+			path = MathLibraryTest;
 			sourceTree = "<group>";
 		};
 		BBADB30A160F73C7007D0A7A /* Supporting Files */ = {
@@ -261,7 +261,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BBADB2F9160F73C7007D0A7A /* Build configuration list for PBXProject "Math Library Test" */;
+			buildConfigurationList = BBADB2F9160F73C7007D0A7A /* Build configuration list for PBXProject "MathLibraryTest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -407,7 +407,7 @@
 		BBADB327160F73C7007D0A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Math Library Test/Math Library Test.entitlements";
+				CODE_SIGN_ENTITLEMENTS = MathLibraryTest/MathLibraryTest.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
@@ -419,7 +419,7 @@
 					$SRCROOT/libs/eigen/,
 					$SRCROOT/libs/glm/,
 				);
-				INFOPLIST_FILE = "Math Library Test/Math Library Test-Info.plist";
+				INFOPLIST_FILE = "MathLibraryTest/MathLibraryTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.whackylabs.Math-Library-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,7 +432,7 @@
 		BBADB328160F73C7007D0A7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "Math Library Test/Math Library Test.entitlements";
+				CODE_SIGN_ENTITLEMENTS = MathLibraryTest/MathLibraryTest.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Manual;
@@ -444,7 +444,7 @@
 					$SRCROOT/libs/eigen/,
 					$SRCROOT/libs/glm/,
 				);
-				INFOPLIST_FILE = "Math Library Test/Math Library Test-Info.plist";
+				INFOPLIST_FILE = "MathLibraryTest/MathLibraryTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.whackylabs.Math-Library-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -457,7 +457,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BBADB2F9160F73C7007D0A7A /* Build configuration list for PBXProject "Math Library Test" */ = {
+		BBADB2F9160F73C7007D0A7A /* Build configuration list for PBXProject "MathLibraryTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BBADB324160F73C7007D0A7A /* Debug */,
