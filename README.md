@@ -29,12 +29,14 @@ Results for each library vary greatly with architecture and optimisation level.
 
 | Library | Additions (ns) | Multiplications (ns) |
 |---------|----------------|----------------------|
-| Eigen   | 3626.55        | 13332.43             |
-| GLM     | 6184.59        | 12889.82             |
-| CML     | 13315.38       | 19489.32             |
-| GLKit   | 183.46         | 2356.84              |
-| Kazmath | 333.41         | 7899.19              |
-| Bullet  | 726.34         | 5678.55              |
+| Eigen   | 4049.47        | 25766.21             |
+| GLM     | 1030.72        | 11677.72             |
+| CML     | 7265.88        | 28132.13             |
+| GLKit   | 187.82         | 394.39               |
+| Kazmath | 355.63         | 2863.69              |
+| Bullet  | 757.27         | 17074.74             |
+| simd    | 642.00         | 1501.06              |
+
 Requirements
 ------------
 

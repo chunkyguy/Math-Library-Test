@@ -6,10 +6,13 @@
 #include "CMLTests.hpp"
 #include "cml/cml.h"
 namespace {
-cml::matrix44f_c* generateCMLMat4s(int count) {
+
+typedef cml::matrix44f_c Matrix;
+
+Matrix* generate(int count) {
   float* randomNumbers = generateRandomNumbers(count);
 
-  cml::matrix44f_c* mats = new cml::matrix44f_c[count];
+  Matrix* mats = new Matrix[count];
   for(int i = 0; i < count; i++) {
     mats[i].set_basis_element(0, 0, randomNumbers[i]);
     mats[i].set_basis_element(1, 1, randomNumbers[i]);
@@ -22,16 +25,16 @@ cml::matrix44f_c* generateCMLMat4s(int count) {
   return mats;
 }
 
-void test_cml_mat4_addition(cml::matrix44f_c* inputA, cml::matrix44f_c* inputB,
-                            cml::matrix44f_c* output, int count) {
+void test_addition(Matrix* inputA, Matrix* inputB,
+                            Matrix* output, int count) {
   for(int i = 0; i < count; i++) {
     output[i] = inputA[i] + inputB[i];
   }
 }
 
-void test_cml_mat4_multiplication(cml::matrix44f_c* inputA,
-                                  cml::matrix44f_c* inputB,
-                                  cml::matrix44f_c* output, int count) {
+void test_multiplication(Matrix* inputA,
+                                  Matrix* inputB,
+                                  Matrix* output, int count) {
   for(int i = 0; i < count; i++) {
     output[i] = inputA[i] * inputB[i];
   }
@@ -44,14 +47,14 @@ TestResult test_cml(int count, int num_tests)
 
   tr.name = "CML";
 
-  cml::matrix44f_c* inputA = generateCMLMat4s(count);
-  cml::matrix44f_c* inputB = generateCMLMat4s(count);
-  cml::matrix44f_c* output = generateCMLMat4s(count);
+  Matrix* inputA = generate(count);
+  Matrix* inputB = generate(count);
+  Matrix* output = generate(count);
 
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_cml_mat4_addition(inputA, inputB, output, count);
+      test_addition(inputA, inputB, output, count);
     }
     kClockEnd(tr.additions);
   }
@@ -60,7 +63,7 @@ TestResult test_cml(int count, int num_tests)
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_cml_mat4_multiplication(inputA, inputB, output, count);
+      test_multiplication(inputA, inputB, output, count);
     }
     kClockEnd(tr.multiplications);
   }

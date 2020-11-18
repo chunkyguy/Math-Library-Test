@@ -7,10 +7,13 @@
 #include "glm/glm.hpp"
 
 namespace  {
-glm::mat4* generateGLMMat4s(int count) {
+
+typedef glm::mat4 Matrix;
+
+Matrix* generate(int count) {
   float* randomNumbers = generateRandomNumbers(count);
   
-  glm::mat4* mats = new glm::mat4[count];
+  Matrix* mats = new Matrix[count];
   for(int i = 0; i < count; i++) {
     mats[i][0][0] = randomNumbers[i];
     mats[i][1][1] = randomNumbers[i];
@@ -23,15 +26,15 @@ glm::mat4* generateGLMMat4s(int count) {
   return mats;
 }
 
-void test_glm_mat4_addition(glm::mat4* inputA, glm::mat4* inputB,
-                            glm::mat4* output, int count) {
+void test_addition(Matrix* inputA, Matrix* inputB,
+                            Matrix* output, int count) {
   for(int i = 0; i < count; i++) {
     output[i] = inputA[i] + inputB[i];
   }
 }
 
-void test_glm_mat4_multiplication(glm::mat4* inputA, glm::mat4* inputB,
-                                  glm::mat4* output, int count){
+void test_multiplication(Matrix* inputA, Matrix* inputB,
+                                  Matrix* output, int count){
   for(int i = 0; i < count; i++) {
     output[i] = inputA[i] * inputB[i];
   }
@@ -43,14 +46,14 @@ TestResult test_glm(int count, int num_tests)
   TestResult tr;
   tr.name = "GLM";
 
-  glm::mat4* inputA = generateGLMMat4s(count);
-  glm::mat4* inputB = generateGLMMat4s(count);
-  glm::mat4* output = generateGLMMat4s(count);
+  Matrix* inputA = generate(count);
+  Matrix* inputB = generate(count);
+  Matrix* output = generate(count);
   
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_glm_mat4_addition(inputA, inputB, output, count);
+      test_addition(inputA, inputB, output, count);
     }
     kClockEnd(tr.additions);
   }
@@ -58,7 +61,7 @@ TestResult test_glm(int count, int num_tests)
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_glm_mat4_multiplication(inputA, inputB, output, count);
+      test_multiplication(inputA, inputB, output, count);
     }
     kClockEnd(tr.multiplications);
   }

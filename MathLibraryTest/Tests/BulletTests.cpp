@@ -7,10 +7,13 @@
 #include "vectormath/scalar/cpp/vectormath_aos.h"
 
 namespace {
-Vectormath::Aos::Matrix4 *generateBulletMat4s(int count) {
+
+typedef Vectormath::Aos::Matrix4 Matrix;
+
+Matrix *generate(int count) {
   float* randomNumbers = generateRandomNumbers(count);
 
-  Vectormath::Aos::Matrix4* mats = new Vectormath::Aos::Matrix4[count];
+  Matrix* mats = new Matrix[count];
   for(int i = 0; i < count; i++) {
     mats[i].setElem(0, 0, randomNumbers[i]);
     mats[i].setElem(1, 1, randomNumbers[i]);
@@ -23,18 +26,18 @@ Vectormath::Aos::Matrix4 *generateBulletMat4s(int count) {
   return mats;
 }
 
-void test_bullet_mat4_addition(Vectormath::Aos::Matrix4* inputA,
-                               Vectormath::Aos::Matrix4* inputB,
-                               Vectormath::Aos::Matrix4* output,
+void test_addition(Matrix* inputA,
+                               Matrix* inputB,
+                               Matrix* output,
                                int count){
   for(int i = 0; i < count; i++) {
     output[i] = inputA[i] + inputB[i];
   }
 }
 
-void test_bullet_mat4_multiplication(Vectormath::Aos::Matrix4* inputA,
-                                     Vectormath::Aos::Matrix4* inputB,
-                                     Vectormath::Aos::Matrix4* output,
+void test_multiplication(Matrix* inputA,
+                                     Matrix* inputB,
+                                     Matrix* output,
                                      int count){
   for(int i = 0; i < count; i++) {
     output[i] = inputA[i] * inputB[i];
@@ -47,14 +50,14 @@ TestResult test_bullet(int count, int num_tests)
   TestResult tr;
   tr.name = "Bullet";
 
-  Vectormath::Aos::Matrix4* inputA = generateBulletMat4s(count);
-  Vectormath::Aos::Matrix4* inputB = generateBulletMat4s(count);
-  Vectormath::Aos::Matrix4* output = generateBulletMat4s(count);
+  Matrix* inputA = generate(count);
+  Matrix* inputB = generate(count);
+  Matrix* output = generate(count);
 
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_bullet_mat4_addition(inputA, inputB, output, count);
+      test_addition(inputA, inputB, output, count);
     }
     kClockEnd(tr.additions);
   }
@@ -62,7 +65,7 @@ TestResult test_bullet(int count, int num_tests)
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_bullet_mat4_multiplication(inputA, inputB, output, count);
+      test_multiplication(inputA, inputB, output, count);
     }
     kClockEnd(tr.multiplications);
   }

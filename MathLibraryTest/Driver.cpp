@@ -5,6 +5,7 @@
 #include "GLKTests.hpp"
 #include "KazmathTests.hpp"
 #include "BulletTests.hpp"
+#include "SIMDTests.hpp"
 
 //const int num_tests = 100000;
 const int num_tests = 10000000;
@@ -18,5 +19,6 @@ std::vector<TestResult> testLibraries(int count) {
   tr.push_back(test_glkmath(count, num_tests));
   tr.push_back(test_kazmath(count, num_tests));
   tr.push_back(test_bullet(count, num_tests));
+  tr.push_back(test_simd(count, num_tests));
   return tr;
 }

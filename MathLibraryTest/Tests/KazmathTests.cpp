@@ -7,10 +7,27 @@
 #include "kazmath/kazmath.h"
 
 namespace {
-kmMat4* generateKazmathMat4s(int count){
+// since Kazmath does not provide any add function writing this in the style of kmMat4Multiply
+kmMat4* kmMat4Add(kmMat4* pOut, const kmMat4* pM1, const kmMat4* pM2)
+{
+  kmScalar mat[16];
+  const kmScalar *m1 = pM1->mat, *m2 = pM2->mat;
+  for (int i = 0; i < 16; ++i) {
+    mat[i] = m1[i] + m2[i];
+  }
+  memcpy(pOut->mat, mat, sizeof(kmScalar)*16);
+  return pOut;
+}
+}
+
+namespace {
+
+typedef kmMat4 Matrix;
+
+Matrix* generate(int count){
   float* randomNumbers = generateRandomNumbers(count);
 
-  kmMat4* mats = new kmMat4[count];
+  Matrix* mats = new Matrix[count];
   for(int i = 0; i < count; i++) {
     mats[i].mat[0] = randomNumbers[i];
     mats[i].mat[5] = randomNumbers[i];
@@ -24,17 +41,15 @@ kmMat4* generateKazmathMat4s(int count){
 
 }
 
-void test_kazmath_mat4_addition(kmMat4* inputA, kmMat4* inputB,
-                                kmMat4* output, int count){
+void test_addition(Matrix* inputA, Matrix* inputB,
+                   Matrix* output, int count){
   for(int i = 0; i < count; i++) {
-    for (int j = 0; j < 16; ++j) {
-      output[i].mat[j] = inputA[i].mat[j] + inputB[i].mat[j];
-    }
+    kmMat4Add(&output[i], &inputA[i], &inputB[i]);
   }
 }
 
-void test_kazmath_mat4_multiplication(kmMat4* inputA, kmMat4* inputB,
-                                      kmMat4* output, int count){
+void test_multiplication(Matrix* inputA, Matrix* inputB,
+                         Matrix* output, int count){
   for(int i = 0; i < count; i++) {
     kmMat4Multiply(&output[i], &inputA[i], &inputB[i]);
   }
@@ -46,14 +61,14 @@ TestResult test_kazmath(int count, int num_tests)
   TestResult tr;
   tr.name = "Kazmath";
 
-  kmMat4* inputA = generateKazmathMat4s(count);
-  kmMat4* inputB = generateKazmathMat4s(count);
-  kmMat4* output = generateKazmathMat4s(count);
+  Matrix* inputA = generate(count);
+  Matrix* inputB = generate(count);
+  Matrix* output = generate(count);
 
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_kazmath_mat4_addition(inputA, inputB, output, count);
+      test_addition(inputA, inputB, output, count);
     }
     kClockEnd(tr.additions);
   }
@@ -61,7 +76,7 @@ TestResult test_kazmath(int count, int num_tests)
   {
     kClockBegin
     for(int i = 0; i < num_tests; i++) {
-      test_kazmath_mat4_multiplication(inputA, inputB, output, count);
+      test_multiplication(inputA, inputB, output, count);
     }
     kClockEnd(tr.multiplications);
   }

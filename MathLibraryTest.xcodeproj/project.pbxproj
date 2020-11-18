@@ -16,6 +16,7 @@
 		79064BDC25652C36006855A3 /* BulletTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BDA25652C36006855A3 /* BulletTests.cpp */; };
 		79064BE025652CC5006855A3 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BDE25652CC5006855A3 /* TestResult.cpp */; };
 		79064BE725653D5B006855A3 /* GraphView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79064BE625653D5B006855A3 /* GraphView.mm */; };
+		79064BEE256573C6006855A3 /* SIMDTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BEC256573C6006855A3 /* SIMDTests.cpp */; };
 		79E7593C2562C3DF00A49F1D /* Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E7593B2562C3DF00A49F1D /* Driver.cpp */; };
 		79E7594E2562C5BF00A49F1D /* mother.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E7594D2562C5BF00A49F1D /* mother.cpp */; };
 		79E759702562C60400A49F1D /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 79E759522562C60400A49F1D /* vec4.c */; };
@@ -66,6 +67,8 @@
 		79064BDF25652CC5006855A3 /* TestResult.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestResult.hpp; sourceTree = "<group>"; };
 		79064BE525653D5B006855A3 /* GraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		79064BE625653D5B006855A3 /* GraphView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphView.mm; sourceTree = "<group>"; };
+		79064BEC256573C6006855A3 /* SIMDTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SIMDTests.cpp; sourceTree = "<group>"; };
+		79064BED256573C6006855A3 /* SIMDTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SIMDTests.hpp; sourceTree = "<group>"; };
 		79E7593A2562C3DF00A49F1D /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 		79E7593B2562C3DF00A49F1D /* Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Driver.cpp; sourceTree = "<group>"; };
 		79E759452562C54E00A49F1D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				79064BD725652C1E006855A3 /* KazmathTests.hpp */,
 				79064BDA25652C36006855A3 /* BulletTests.cpp */,
 				79064BDB25652C36006855A3 /* BulletTests.hpp */,
+				79064BEC256573C6006855A3 /* SIMDTests.cpp */,
+				79064BED256573C6006855A3 /* SIMDTests.hpp */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				79064BD425652C06006855A3 /* GLKTests.cpp in Sources */,
 				79E7593C2562C3DF00A49F1D /* Driver.cpp in Sources */,
 				79064BC825652B8A006855A3 /* EigenTests.cpp in Sources */,
+				79064BEE256573C6006855A3 /* SIMDTests.cpp in Sources */,
 				79E759702562C60400A49F1D /* vec4.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
