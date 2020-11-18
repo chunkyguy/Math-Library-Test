@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphView.h"
 
 @interface NHViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextView *outputText;
+@property (strong, nonatomic) IBOutlet GraphView *graphView;
 @property (strong, nonatomic) IBOutlet UIButton *button;
 
 - (IBAction)runTests:(id)sender;

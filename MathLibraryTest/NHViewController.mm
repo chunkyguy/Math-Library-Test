@@ -27,9 +27,6 @@
   UIActivityIndicatorView *_activityVw = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleLarge];
   [_activityVw setHidden:YES];
   [self.view addSubview:_activityVw];
-
-  self.outputText.text = @"Tap the button to run tests.";
-  self.outputText.textAlignment = NSTextAlignmentCenter;
 }
 
 - (IBAction)runTests:(id)sender
@@ -37,44 +34,34 @@
   [_activityView setHidden:NO];
   [_activityView startAnimating];
   self.button.hidden = YES;
-  self.outputText.text = @"Running ...";
 
   [self.view setUserInteractionEnabled:NO];
   dispatch_async(_taskQueue, ^{
-    TestResults tr = testLibraries(10);
+    std::vector<TestResult> testResults = testLibraries(10);
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.view setUserInteractionEnabled:YES];
-      [self completeTestsWithResult:tr];
+      [self completeTestsWithResult:testResults];
     });
   });
 }
 
-- (void)completeTestsWithResult:(TestResults)tr {
+- (void)completeTestsWithResult:(const std::vector<TestResult> &)testResults
+{
   self.button.hidden = NO;
   [_activityView setHidden:YES];
   [_activityView stopAnimating];
   [_activityView removeFromSuperview];
 
-  NSString *results = [NSString stringWithFormat:
-                       @"| Library | Additions (ms) | Multiplications (ms) |\n"
-                       @"|---------|----------------|----------------------|\n"
-                       @"| Eigen | %010.2f | %010.2f |\n"
-                       @"| GLM | %010.2f | %010.2f |\n"
-                       @"| CML | %010.2f | %010.2f |\n"
-                       @"| GLKMath | %010.2f | %010.2f |\n"
-                       @"| kazmath | %010.2f | %010.2f |\n"
-                       @"| bullet | %010.2f | %010.2f |\n"
-                       ,
-                       tr.eigen.additions, tr.eigen.multiplications,
-                       tr.glm.additions, tr.glm.multiplications,
-                       tr.cml.additions, tr.cml.multiplications,
-                       tr.glkMath.additions, tr.glkMath.multiplications,
-                       tr.kazmath.additions, tr.kazmath.multiplications,
-                       tr.bullet.additions, tr.bullet.multiplications
-                       ];
+  [self.graphView setResults:testResults];
 
-  self.outputText.text = [NSString stringWithFormat:@"%@", results];
-  NSLog(@"\n%@", results);
+  NSMutableArray *results = [NSMutableArray array];
+  [results addObject:@"| Library | Additions (ms) | Multiplications (ms) |"];
+  [results addObject:@"|---------|----------------|----------------------|"];
+  for (TestResult t : testResults) {
+    [results addObject:[NSString stringWithFormat:@"| %s | %010.2f | %010.2f |", t.name.c_str(), t.additions, t.multiplications]];
+  }
+  NSString *text = [results componentsJoinedByString:@"\n"];
+  NSLog(@"\n%@", text);
 }
 
 @end

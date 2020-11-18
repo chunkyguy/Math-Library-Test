@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		199B675B16FAE4BC0070E053 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199B675A16FAE4BC0070E053 /* GLKit.framework */; platformFilter = ios; };
+		79064BC825652B8A006855A3 /* EigenTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BC625652B8A006855A3 /* EigenTests.cpp */; };
+		79064BCC25652BB2006855A3 /* GLMTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BCA25652BB2006855A3 /* GLMTests.cpp */; };
+		79064BD025652BE4006855A3 /* CMLTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BCE25652BE4006855A3 /* CMLTests.cpp */; };
+		79064BD425652C06006855A3 /* GLKTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BD225652C06006855A3 /* GLKTests.cpp */; };
+		79064BD825652C1E006855A3 /* KazmathTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BD625652C1E006855A3 /* KazmathTests.cpp */; };
+		79064BDC25652C36006855A3 /* BulletTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BDA25652C36006855A3 /* BulletTests.cpp */; };
+		79064BE025652CC5006855A3 /* TestResult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79064BDE25652CC5006855A3 /* TestResult.cpp */; };
+		79064BE725653D5B006855A3 /* GraphView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 79064BE625653D5B006855A3 /* GraphView.mm */; };
 		79E7593C2562C3DF00A49F1D /* Driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E7593B2562C3DF00A49F1D /* Driver.cpp */; };
 		79E7594E2562C5BF00A49F1D /* mother.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79E7594D2562C5BF00A49F1D /* mother.cpp */; };
 		79E759702562C60400A49F1D /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 79E759522562C60400A49F1D /* vec4.c */; };
@@ -42,6 +50,22 @@
 /* Begin PBXFileReference section */
 		19464A38192FEBBF00971460 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		199B675A16FAE4BC0070E053 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		79064BC625652B8A006855A3 /* EigenTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EigenTests.cpp; sourceTree = "<group>"; };
+		79064BC725652B8A006855A3 /* EigenTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EigenTests.hpp; sourceTree = "<group>"; };
+		79064BCA25652BB2006855A3 /* GLMTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GLMTests.cpp; sourceTree = "<group>"; };
+		79064BCB25652BB2006855A3 /* GLMTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLMTests.hpp; sourceTree = "<group>"; };
+		79064BCE25652BE4006855A3 /* CMLTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CMLTests.cpp; sourceTree = "<group>"; };
+		79064BCF25652BE4006855A3 /* CMLTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CMLTests.hpp; sourceTree = "<group>"; };
+		79064BD225652C06006855A3 /* GLKTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GLKTests.cpp; sourceTree = "<group>"; };
+		79064BD325652C06006855A3 /* GLKTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GLKTests.hpp; sourceTree = "<group>"; };
+		79064BD625652C1E006855A3 /* KazmathTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = KazmathTests.cpp; sourceTree = "<group>"; };
+		79064BD725652C1E006855A3 /* KazmathTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KazmathTests.hpp; sourceTree = "<group>"; };
+		79064BDA25652C36006855A3 /* BulletTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BulletTests.cpp; sourceTree = "<group>"; };
+		79064BDB25652C36006855A3 /* BulletTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BulletTests.hpp; sourceTree = "<group>"; };
+		79064BDE25652CC5006855A3 /* TestResult.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestResult.cpp; sourceTree = "<group>"; };
+		79064BDF25652CC5006855A3 /* TestResult.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TestResult.hpp; sourceTree = "<group>"; };
+		79064BE525653D5B006855A3 /* GraphView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		79064BE625653D5B006855A3 /* GraphView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GraphView.mm; sourceTree = "<group>"; };
 		79E7593A2562C3DF00A49F1D /* Driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Driver.h; sourceTree = "<group>"; };
 		79E7593B2562C3DF00A49F1D /* Driver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Driver.cpp; sourceTree = "<group>"; };
 		79E759452562C54E00A49F1D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -114,6 +138,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79064BC525652B5B006855A3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				79064BC625652B8A006855A3 /* EigenTests.cpp */,
+				79064BC725652B8A006855A3 /* EigenTests.hpp */,
+				79064BCA25652BB2006855A3 /* GLMTests.cpp */,
+				79064BCB25652BB2006855A3 /* GLMTests.hpp */,
+				79064BCE25652BE4006855A3 /* CMLTests.cpp */,
+				79064BCF25652BE4006855A3 /* CMLTests.hpp */,
+				79064BD225652C06006855A3 /* GLKTests.cpp */,
+				79064BD325652C06006855A3 /* GLKTests.hpp */,
+				79064BD625652C1E006855A3 /* KazmathTests.cpp */,
+				79064BD725652C1E006855A3 /* KazmathTests.hpp */,
+				79064BDA25652C36006855A3 /* BulletTests.cpp */,
+				79064BDB25652C36006855A3 /* BulletTests.hpp */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		79E759502562C60400A49F1D /* kazmath */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,16 +239,21 @@
 		BBADB309160F73C7007D0A7A /* MathLibraryTest */ = {
 			isa = PBXGroup;
 			children = (
-				79E759802562D0CF00A49F1D /* MathLibraryTest.entitlements */,
 				79E759502562C60400A49F1D /* kazmath */,
+				79064BC525652B5B006855A3 /* Tests */,
+				79E759802562D0CF00A49F1D /* MathLibraryTest.entitlements */,
 				79E7594D2562C5BF00A49F1D /* mother.cpp */,
 				79E7594C2562C5BF00A49F1D /* mother.h */,
+				79064BDE25652CC5006855A3 /* TestResult.cpp */,
+				79064BDF25652CC5006855A3 /* TestResult.hpp */,
 				79E7593B2562C3DF00A49F1D /* Driver.cpp */,
 				79E7593A2562C3DF00A49F1D /* Driver.h */,
 				BBADB312160F73C7007D0A7A /* NHAppDelegate.h */,
 				BBADB313160F73C7007D0A7A /* NHAppDelegate.mm */,
 				BBADB321160F73C7007D0A7A /* NHViewController.h */,
 				BBADB322160F73C7007D0A7A /* NHViewController.mm */,
+				79064BE525653D5B006855A3 /* GraphView.h */,
+				79064BE625653D5B006855A3 /* GraphView.mm */,
 				BBADB31B160F73C7007D0A7A /* MainStoryboard_iPhone.storyboard */,
 				BBADB31E160F73C7007D0A7A /* MainStoryboard_iPad.storyboard */,
 				BBADB30A160F73C7007D0A7A /* Supporting Files */,
@@ -252,7 +300,7 @@
 		BBADB2F6160F73C7007D0A7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = NH;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Noise & Heat";
 				TargetAttributes = {
@@ -306,19 +354,27 @@
 				79E7597C2562C60400A49F1D /* plane.c in Sources */,
 				79E759762562C60400A49F1D /* mat4.c in Sources */,
 				BBADB310160F73C7007D0A7A /* main.mm in Sources */,
+				79064BCC25652BB2006855A3 /* GLMTests.cpp in Sources */,
 				79E7597D2562C60400A49F1D /* quaternion.c in Sources */,
 				79E759732562C60400A49F1D /* aabb3.c in Sources */,
 				79E7597B2562C60400A49F1D /* ray2.c in Sources */,
+				79064BE025652CC5006855A3 /* TestResult.cpp in Sources */,
 				79E7597E2562C60400A49F1D /* aabb2.c in Sources */,
+				79064BD025652BE4006855A3 /* CMLTests.cpp in Sources */,
 				79E759722562C60400A49F1D /* ray3.c in Sources */,
+				79064BD825652C1E006855A3 /* KazmathTests.cpp in Sources */,
 				79E7594E2562C5BF00A49F1D /* mother.cpp in Sources */,
 				BBADB314160F73C7007D0A7A /* NHAppDelegate.mm in Sources */,
 				79E759772562C60400A49F1D /* vec2.c in Sources */,
 				79E759792562C60400A49F1D /* matrix.c in Sources */,
+				79064BDC25652C36006855A3 /* BulletTests.cpp in Sources */,
 				BBADB323160F73C7007D0A7A /* NHViewController.mm in Sources */,
 				79E759742562C60400A49F1D /* utility.c in Sources */,
+				79064BE725653D5B006855A3 /* GraphView.mm in Sources */,
 				79E759782562C60400A49F1D /* mat4stack.c in Sources */,
+				79064BD425652C06006855A3 /* GLKTests.cpp in Sources */,
 				79E7593C2562C3DF00A49F1D /* Driver.cpp in Sources */,
+				79064BC825652B8A006855A3 /* EigenTests.cpp in Sources */,
 				79E759702562C60400A49F1D /* vec4.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
