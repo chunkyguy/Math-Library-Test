@@ -1,4 +1,4 @@
-C++ Math Library Test (iOS)
+C++ Math Library Test (Apple Devices)
 =====================
 
 Introduction
@@ -17,18 +17,24 @@ At the time of writing, the libraries tested are:
 Results:
 ----------------------------------------------
 
+So far I've tested matrix addition and multiplication. `src/Main.cpp` contains
+code that will generate two lists of 1 million 4x4 float matrices for each
+library, populate them with random float values, and then add each one from the
+first column to the second. It will then do the same for multiplication. It
+will repeat this step 10 times and print out how long it took for each library.
+
+Results for each library vary greatly with architecture and optimisation level.
+
 **Mac - 2.3 GHz 8-Core Intel Core i9 - 32 GB RAM**
 
-| Library | Additions | Multiplications |
-|---------|-----------|-----------------|
-| Eigen   | 35189.90  | 94775.82        |
-| GLM     | 9313.45   | 147166.57       |
-| CML     | 165944.39 | 238704.62       |
-| GLKMath | 1851.95   | 34712.40        |
-| kazmath | 3267.87   | 62180.50        |
-| bullet  | 7136.42   | 33768.81        |
-
-```
+| Library | Additions (ms) | Multiplications (ms) |
+|---------|----------------|----------------------|
+| Eigen   | 35189.90       | 94775.82             |
+| GLM     | 9313.45        | 147166.57            |
+| CML     | 165944.39      | 238704.62            |
+| GLKMath | 1851.95        | 34712.40             |
+| kazmath | 3267.87        | 62180.50             |
+| bullet  | 7136.42        | 33768.81             |
 
 Requirements
 ------------
@@ -84,43 +90,6 @@ are:
   randomness](http://en.wikipedia.org/wiki/Diehard_tests)
 * Possibly noise generation
 * Ease of integration with gl functions like glTranslate()
-
-Results
--------
-So far I've tested matrix addition and multiplication. `src/Main.cpp` contains
-code that will generate two lists of 1 million 4x4 float matrices for each
-library, populate them with random float values, and then add each one from the
-first column to the second. It will then do the same for multiplication. It
-will repeat this step 10 times and print out how long it took for each library.
-
-Results for each library vary greatly with architecture and optimisation level.
-I have tested standard GCC build on Mac OS X Lion as well as an SSE enabled
-build, and armeabi, armeabi-v7a and armeabi-v7a with NEON instructions for
-Android.
-
-Note that all tests use the `-O2` GCC optimisation flag except the non-SSE
-laptop build which uses `-O0`.
-
-Results for addition and multiplication are shown below. Note that the
-laptop I'm using is an i7 2.2ghz early 2011 MacBook Pro and the Android device is a
-Stock HTC Desire (2.2) with a 1 GHz Qualcomm QSD8250. All times are in milliseconds.
-
-                            laptop  laptop (SSE)  armeabi  armeabi-v7a  armeabi-v7a with neon
-    Eigen additions         8065    30            9944     2181         2145
-    Eigen multiplications   22404   86            59460    5143         5113
-    GLM additions           2375    76            10256    1506         1407
-    GLM multiplications     7337    400           59008    2189         3108
-    CML additions           12336   96            9587     2885         2996
-    CML multiplications     21603   551           58399    5306         5280
-
-The first column for the laptop doesn't have any compile-time optimisations
-and is included purely for interest. From the other results, Eigen seems to be
-the fastest for these operations, but GLM is the fastest on the HTC Desire with
-both ABIs.
-
-Despite GLM being faster on the mobile devices, I am more inclined to use Eigen
-due to its speed on the tested Intel CPU and its much better documentation and
-more active community.
 
 Change Log
 -----------
