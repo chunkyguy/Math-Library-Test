@@ -51,17 +51,17 @@
 
 - (void)completeTestsWithResult:(TestResults)tr {
   self.button.hidden = NO;
-[_activityView setHidden:YES];
+  [_activityView setHidden:YES];
   [_activityView stopAnimating];
   [_activityView removeFromSuperview];
 
   NSString *results = [NSString stringWithFormat:
-                       @"\nEigen:\nAdditions: %.2f ms\tMultiplications: %.2f ms\n"
-                       @"\nGLM:\nAdditions: %.2f ms\tMultiplications: %.2f ms\n"
-                       @"\nCML:\nAdditions: %.2f ms\tMultiplications: %.2f ms\n"
-                       @"\nGLKMath:\nAdditions: %.2f ms\tMultiplications: %.2f ms\n"
-                       @"\nkazmath:\nAdditions: %.2f ms\tMultiplications: %.2f ms\n"
-                       @"\nbullet:\nAdditions: %.2f ms\tMultiplications: %.2f ms\n"
+                       @"| Eigen | %.2f | %.2f |\n"
+                       @"| GLM | %.2f | %.2f |\n"
+                       @"| CML | %.2f | %.2f |\n"
+                       @"| GLKMath | %.2f | %.2f |\n"
+                       @"| kazmath | %.2f | %.2f |\n"
+                       @"| bullet | %.2f | %.2f |\n"
                        ,
                        tr.eigen.additions, tr.eigen.multiplications,
                        tr.glm.additions, tr.glm.multiplications,
@@ -72,7 +72,7 @@
                        ];
 
   self.outputText.text = [NSString stringWithFormat:@"%@", results];
-  NSLog(@"%@", results);
+  NSLog(@"\n%@", results);
 }
 
 @end

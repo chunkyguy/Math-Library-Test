@@ -14,26 +14,20 @@ At the time of writing, the libraries tested are:
 * [kazmath](https://github.com/Kazade/kazmath)
 * [bullet-vectormath](http://bullet.svn.sourceforge.net/viewvc/bullet/trunk/Extras/vectormathlibrary/)
   
-Results: iPhone 5s + iOS 7.1.1 + Release mode
+Results:
 ----------------------------------------------
-```
-Eigen:
-Additions: 3413.55 ms  Multiplications: 10813.43 ms
 
-GLM:
-Additions: 691.99 ms  Multiplications: 2062.06 ms
+**Mac - 2.3 GHz 8-Core Intel Core i9 - 32 GB RAM**
 
-CML:
-Additions: 3592.93 ms  Multiplications: 12672.40 ms
+| Library | Additions | Multiplications |
+|---------|-----------|-----------------|
+| Eigen   | 35189.90  | 94775.82        |
+| GLM     | 9313.45   | 147166.57       |
+| CML     | 165944.39 | 238704.62       |
+| GLKMath | 1851.95   | 34712.40        |
+| kazmath | 3267.87   | 62180.50        |
+| bullet  | 7136.42   | 33768.81        |
 
-GLKMath:
-Additions: 474.29 ms  Multiplications: 1407.87 ms
-
-kazmath:
-Additions: 1066.58 ms  Multiplications: 1837.57 ms
-
-bullet:
-Additions: 791.20 ms  Multiplications: 1884.62 ms
 ```
 
 Requirements
